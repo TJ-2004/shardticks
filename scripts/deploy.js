@@ -12,9 +12,10 @@ async function main() {
     console.log('Deploying contracts with the account:', deployer.address);
 
     const ERC4907 = await ethers.getContractFactory('ERC4907');
-    const erc4907 = await ERC4907.deploy('YourNFTName', 'NFT');
+    const erc4907 = await ERC4907.deploy('name', 'nft');
+    const contractadd=await erc4907.getAddress();
 
-    console.log('ERC4907 deployed to:', erc4907.address);
+    console.log('ERC4907 deployed to:', contractadd);
 }
 
 main()
